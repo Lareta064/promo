@@ -1,0 +1,152 @@
+@use "../base/_variables" as *;
+
+.mobile-menu {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+	pointer-events: none;
+	visibility: hidden;
+
+	&.is-open {
+		pointer-events: auto;
+		visibility: visible;
+	}
+
+	&__sheet {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		max-height: 90vh;
+		padding: 0 16px 24px;
+		background-color: var(--color-white);
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+		transform: translateY(100%);
+		transition: transform 0.3s ease;
+	}
+
+	&.is-open &__sheet {
+		transform: translateY(0);
+	}
+
+	&__handle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 28px;
+		padding: 0;
+		margin-bottom: 8px;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+
+		span {
+			display: block;
+			width: 40px;
+			height: 4px;
+			border-radius: 2px;
+			background-color: var(--color-grey-medium);
+		}
+	}
+
+	&__views {
+		position: relative;
+		flex: 1 1 auto;
+		min-height: 0;
+		overflow: hidden;
+	}
+
+	&__view {
+		display: none;
+		flex-direction: column;
+		max-height: 100%;
+		overflow-y: auto;
+
+		&.is-active {
+			display: flex;
+		}
+	}
+
+	&__label {
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: var(--color-grey-medium);
+		padding: 8px 0 16px;
+	}
+
+	&__back {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 0;
+		border: 0;
+		background: transparent;
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: var(--color-black);
+		cursor: pointer;
+		align-self: flex-start;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			color: currentColor;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__row {
+		display: block;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		width: 100%;
+		padding: 14px 4px;
+		border: 0;
+		background: transparent;
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: var(--color-black);
+		text-decoration: none;
+		text-align: left;
+		cursor: pointer;
+
+		&.is-active {
+			color: var(--light-blue);
+		}
+	}
+
+	&__chevron {
+		width: 20px;
+		height: 20px;
+		color: currentColor;
+		flex-shrink: 0;
+	}
+}

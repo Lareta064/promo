@@ -1,0 +1,38 @@
+extends /pug/layouts/layout-ui.pug
+
+block content
+
+	include /pug/layouts/_ui-navigation.pug
+	.container-dashboard
+		h2.db-h2 Типографика
+
+		.container-dashboard__content
+			ul.ui-typography
+				li
+					.h1 H1 — Заголовок 1
+					pre.
+						.h1 — Roboto Flex 400, 35/45, tracking 3px
+				li
+					.h2 H2 — Заголовок 2
+					pre.
+						.h2 — Roboto Flex 400, 28/1.2, tracking 3px
+				li
+					.text-large Text large — крупный текст для подзаголовков и важных абзацев
+					pre.
+						.text-large — Inter 400, 25/40
+				li
+					.text-big Text big — акцентный текст средний размер
+					pre.
+						.text-big — Inter Medium 500, 18/24, tracking 2px
+				li
+					.text-medium Text medium — основной текст блоков и описаний
+					pre.
+						.text-medium — Inter 400, 18/32
+				li
+					.text-small Text small — мелкий текст подписей и заметок
+					pre.
+						.text-small — Inter 400, 16/27
+				li
+					.text-small-caps Text small caps — мелкий капс
+					pre.
+						.text-small-caps — Inter 400, 16/32, uppercase

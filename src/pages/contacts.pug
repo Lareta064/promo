@@ -1,0 +1,11 @@
+extends /pug/layouts/layout.pug
+
+block content
+	.page-content
+		include /pug/sections/_header.pug
+		main.main-page
+			h1.headline Контакты
+		include /pug/sections/_footer.pug
+			
+block variables
+	-var title = "Project";

@@ -1,0 +1,92 @@
+-
+	var mainMenu = [
+		{ id: 'home', label: 'Home', activeBy: 'home' },
+		{ id: 'aviation-history', label: ['Aviation', 'History'], activeBy: 'aviation-history', inChips: true, active: true },
+		{ id: 'twin-library', label: ['Twin', 'Library'], activeBy: 'twin-library', inChips: true },
+		{ id: 'pilot-story', label: ['Pilot', 'Story'], activeBy: 'pilot-story', inChips: true },
+		{ id: 'training-cases', label: ['Training', 'Cases'], activeBy: 'training-cases', inChips: true },
+		{ id: 'airman-events', label: ['Airman', 'Events'], activeBy: 'airman-events', inChips: true },
+		{ id: 'regulatory-files', label: 'Regulatory Files', activeBy: 'regulatory-files' }
+	];
+	var otherMenu = [
+		{ id: 'link-in', label: 'Link in' },
+		{ id: 'weather', label: 'Weather' },
+		{ id: 'contact', label: 'Contact' },
+		{ id: 'faq', label: 'FAQ' },
+		{ id: 'ai-search', label: 'AI-Search' },
+		{ id: 'privacy', label: 'Privacy' }
+	];
+
+header.header
+	.container.header__inner
+		a.header__logo(href="/")
+			picture.header__logo-img
+				img(
+					src="/img/logo.png"
+					srcset="/img/logo.png 1x, /img/logo@2x.png 2x"
+					alt="Aviation Twin Library"
+					width="35"
+					height="35"
+				)
+			.header__logo-text Aviation Twin Library
+				
+
+		nav.header__nav(aria-label="Главное меню")
+			.chip-row.header__chip-row
+				each item in mainMenu
+					if item.inChips
+						a.chip(href=`#${item.id}`, class=item.active ? 'is-active' : '')
+							if Array.isArray(item.label)
+								each line in item.label
+									span= line
+							else
+								span= item.label
+				button.chip.chip--with-icon.header__chip-other.js-other-toggle(type="button", aria-haspopup="true", aria-expanded="false")
+					span Other
+					svg.chip__icon(viewBox="0 0 24 24", fill="none", aria-hidden="true")
+						path(d="M6 9l6 6 6-6", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+
+		button.menu-toggle.header__burger.js-menu-toggle(type="button", aria-label="Открыть меню", aria-controls="mobile-menu", aria-expanded="false")
+			span
+
+	//- Desktop dropdown «Other»
+	.dropdown.header__dropdown.js-other-dropdown(aria-hidden="true")
+		ul.dropdown__list
+			each item in otherMenu
+				li.dropdown__item
+					a.dropdown__link(href=`#${item.id}`)= item.label
+		button.dropdown__close.js-other-close(type="button", aria-label="Закрыть")
+			svg(viewBox="0 0 24 24", fill="none", aria-hidden="true")
+				path(d="M6 15l6-6 6 6", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+
+//- Bottom-sheet (mobile burger menu)
+.mobile-menu.js-mobile-menu#mobile-menu(aria-hidden="true")
+	.mobile-menu__sheet(role="dialog", aria-modal="true", aria-label="Меню")
+		button.mobile-menu__handle.js-menu-close(type="button", aria-label="Закрыть меню")
+			span
+		.mobile-menu__views
+			.mobile-menu__view.mobile-menu__view--main.is-active(data-view="main")
+				ul.mobile-menu__list
+					each item in mainMenu
+						li.mobile-menu__row
+							a.mobile-menu__link(href=`#${item.id}`, class=item.active ? 'is-active' : '')
+								if Array.isArray(item.label)
+									= item.label.join(' ')
+								else
+									= item.label
+					li.mobile-menu__row
+						button.mobile-menu__link.mobile-menu__link--has-sub.js-other-open(type="button")
+							span Other
+							svg.mobile-menu__chevron(viewBox="0 0 24 24", fill="none", aria-hidden="true")
+								path(d="M9 6l6 6-6 6", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+
+			.mobile-menu__view.mobile-menu__view--sub(data-view="sub")
+				button.mobile-menu__back.js-other-back(type="button")
+					svg(viewBox="0 0 24 24", fill="none", aria-hidden="true")
+						path(d="M15 6l-6 6 6 6", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+					span Back
+				.mobile-menu__label Other
+				ul.mobile-menu__list
+					each item in otherMenu
+						li.mobile-menu__row
+							a.mobile-menu__link(href=`#${item.id}`)= item.label

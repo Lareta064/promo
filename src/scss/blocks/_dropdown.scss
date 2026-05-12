@@ -1,0 +1,74 @@
+@use "../base/_variables" as *;
+
+.dropdown {
+	position: absolute;
+	top: 100%;
+	right: 40px;
+	z-index: 20;
+	display: none;
+	flex-direction: column;
+	min-width: 280px;
+	padding: 8px 0;
+	background-color: var(--color-white);
+	box-shadow: 0 12px 32px rgba(16, 39, 91, 0.12);
+
+	&.is-open {
+		display: flex;
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__item {
+		display: block;
+	}
+
+	&__link {
+		display: block;
+		padding: 14px 24px;
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: var(--color-black);
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.15s, color 0.15s;
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--light-blue);
+			color: var(--color-white);
+		}
+	}
+
+	&__close {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 36px;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: var(--color-black);
+		cursor: pointer;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			color: currentColor;
+		}
+	}
+
+	@media (max-width: $bp-desktop) {
+		display: none !important;
+	}
+}

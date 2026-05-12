@@ -1,0 +1,36 @@
+extends /pug/layouts/layout-ui.pug
+
+block content
+
+	include /pug/layouts/_ui-navigation.pug
+	.container-dashboard
+		h2.db-h2 Chips (кнопки меню)
+
+		.container-dashboard__content
+			h3 Состояния
+			.chip-row
+				a.chip.is-active(href="#aviation-history")
+					span Aviation
+					span history
+				a.chip(href="#twin-library")
+					span Twin
+					span library
+				a.chip(href="#pilot-story")
+					span Pilot
+					span story
+				a.chip(href="#training-cases")
+					span Training
+					span cases
+				a.chip(href="#airman-events")
+					span Airman
+					span events
+				button.chip.chip--with-icon(type="button")
+					span Other
+					svg.chip__icon(viewBox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg", aria-hidden="true")
+						path(d="M6 9l6 6 6-6", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+
+			br
+			pre.
+				a.chip.is-active            // активный (ссылка)
+				a.chip                      // обычный (ссылка)
+				button.chip.chip--with-icon // с иконкой — только триггер дропдауна (button)

@@ -1,0 +1,45 @@
+extends /pug/layouts/layout-ui.pug
+
+block content
+
+	include /pug/layouts/_ui-navigation.pug
+	.container-dashboard
+		h2.db-h2 Цветовая схема
+		.container-dashboard__content
+			ul.color-scheme
+				li
+					span.color-box(style="background-color: #222121;")
+					span.color-name --color-black — #222121
+				li
+					span.color-box(style="background-color: #393838;")
+					span.color-name --color-text — #393838
+				li
+					span.color-box(style="background-color: #4c4c4c;")
+					span.color-name --color-crey — #4c4c4c
+				li
+					span.color-box(style="background-color: #696868;")
+					span.color-name --color-meta-info — #696868
+				li
+					span.color-box(style="background-color: #989797;")
+					span.color-name --color-grey-medium — #989797
+				li
+					span.color-box(style="background-color: #f1f1f1;")
+					span.color-name --color-light-grey — #f1f1f1
+				li
+					span.color-box(style="background-color: #faf7f7;")
+					span.color-name --color-white-warm — #faf7f7
+				li
+					span.color-box(style="background-color: #ffffff;")
+					span.color-name --color-white — #ffffff
+				li
+					span.color-box(style="background-color: #13379a;")
+					span.color-name --color-blue — #13379a
+				li
+					span.color-box(style="background-color: #3155b8;")
+					span.color-name --light-blue — #3155b8
+				li
+					span.color-box(style="background-color: #6d92f8;")
+					span.color-name --color-link — #6d92f8
+				li
+					span.color-box(style="background-color: #d03664;")
+					span.color-name --color-error — #d03664

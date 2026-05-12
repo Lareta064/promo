@@ -1,0 +1,15 @@
+extends /pug/layouts/layout.pug
+
+block content
+	.page-content
+		include /pug/sections/_header.pug
+		main.main-page
+			svg.svg-right
+				use(href='./img/sprite.svg#right')
+			
+					
+		include /pug/sections/_promo.pug
+		include /pug/sections/_footer.pug
+			
+block variables
+	-var title = "Project";

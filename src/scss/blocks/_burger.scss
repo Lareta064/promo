@@ -1,0 +1,60 @@
+
+/*burger*/
+
+.menu-toggle {
+
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  margin-left: auto;
+
+}
+  @media (max-width: 1199px) { 
+		.menu-toggle{ display: flex;
+			position: relative;
+ 			 z-index: 4;
+		}
+
+  }
+.menu-toggle span {
+  position: relative;
+  border-radius: 2px;
+  width: 24px;
+  height: 2px;
+  background-color: #222121;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 35px;
+  height: 2px;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  background-color: #222121;
+}
+
+.menu-toggle span::before {
+  top: -6px;
+}
+
+.menu-toggle span::after {
+  top: 6px;
+}
+
+.menu-toggle.active span {
+  background-color: transparent;
+}
+
+.menu-toggle.active span::before,
+.menu-toggle.active span::after {
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  background-color: #222121;
+}
+
