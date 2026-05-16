@@ -42,7 +42,7 @@
 		letter-spacing: 0.03em;
 		text-transform: uppercase;
 		color: var(--color-black);
-		@media (max-width:$bp-xxl) {
+		@media (max-width:1599px) {
 		  font-size: 1.8vw;
 		}
 		@media (max-width:$bp-tablet) {

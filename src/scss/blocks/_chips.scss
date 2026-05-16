@@ -6,12 +6,10 @@
 	align-items: stretch;
 	gap: 32px;
 	flex-wrap: wrap;
-	@media (max-width: $bp-xxl) {
-	  gap: 20px;
+	@media (max-width: 1599px) {
+	  gap: 16px;
 	}
-	@media (max-width: $bp-desktop) {
-	  gap:16px;
-	}
+	
 	@media (max-width: $bp-tablet) {
 	  gap: 8px;
 	}
@@ -22,7 +20,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 7px;
-	padding: 14px 15px;
+	padding: 13px 15px;
 	min-height: 81px;
 	border: 0;
 	border-radius: 14px;
@@ -46,6 +44,7 @@
 			-14px 32px 10.5px rgba(16, 39, 91, 0.05),
 			-26px 57px 12.5px rgba(16, 39, 91, 0.01),
 			-40px 89px 13.5px rgba(16, 39, 91, 0);
+		
 	}
 
 	&--with-icon {
