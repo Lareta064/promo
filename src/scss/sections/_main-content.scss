@@ -17,6 +17,9 @@
 	width: 35%;
 	max-width: 635px;
 	flex-shrink:0;
+	@media (max-width: 1799px) {
+	width: 30%;
+	}
 }
 .main-left-grid{
 	background: var(--color-light-grey);
