@@ -38,11 +38,11 @@
 		font-family: var(--font-family);
 		font-weight: 500;
 		font-size: 28px;
-		line-height: 64%;
+		line-height:1;
 		letter-spacing: 0.03em;
 		text-transform: uppercase;
 		color: var(--color-black);
-		@media (max-width:$bp-xxl) {
+		@media (max-width:1699px) {
 		  font-size: 1.8vw;
 		}
 		@media (max-width:$bp-tablet) {
