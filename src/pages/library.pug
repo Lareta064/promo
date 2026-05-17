@@ -1,0 +1,131 @@
+extends /pug/layouts/layout.pug
+
+mixin libraryRows(items)
+	each article in items
+		tr.library-row(data-article-id=article.id)
+			td.library-table__cell.library-table__cell--num= article.id
+			td.library-table__cell.library-table__cell--title
+				a.library-row__title(href="#")= article.title
+				span.library-row__date-mobile= article.date
+			td.library-table__cell.library-table__cell--date= article.date
+			td.library-table__cell.library-table__cell--words= article.words
+			td.library-table__cell.library-table__cell--time= article.readTime + 'm'
+		tr.library-row__expand(aria-hidden="true")
+			td(colspan="5")
+				.library-card
+					.library-card__title= article.title
+					.library-card__meta
+						span.library-card__label Date:
+						span.library-card__value= article.date
+					.library-card__meta
+						span.library-card__label Reading time:
+						span.library-card__value= article.readTime + ' minutes'
+					.library-card__meta
+						span.library-card__label Words:
+						span.library-card__value= article.words
+					a.library-card__btn(href="#")
+						span Open article
+						svg(width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true")
+							path(d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+block content
+	.page-content
+		include /pug/sections/_header.pug
+		main.main-content
+			.container
+				.main-grid
+					.main-left
+						.main-large-image
+						.main-left-grid
+							.image-top(data-dynamic-move=".main-large-image, 768")
+								p.main-left-title We are sincerely grateful to our sponsors for standing by us
+								img(src='./img/1.png', srcset='./img/1@2x.png 2x' width='593' height='295' loading='lazy' alt='img')
+							.image-left
+								img(src='./img/2.png', srcset='./img/2@2x.png 2x' width='275' height='243' loading='lazy' alt='img')
+							.image-right
+								img(src='./img/3.png', srcset='./img/3@2x.png 2x' width='310' height='243' loading='lazy' alt='img')
+
+							.partners-banner
+								.partners-banner__img
+									img(src='./img/Icon.png', srcset='./img/Icon@2x.png 2x' width='55' height='55' loading='lazy' alt='img')
+								.partners-banner__text
+									.partners-banner__title Your brand here
+									p.font-18 Space available —<br>promote your project now!
+
+					.main-right
+						-
+							var articles = [
+								{ id: 1, title: 'Critical engine failure twin engine: What pilot two word...', date: '31 Jan 2026', words: '1000', readTime: '55' },
+								{ id: 2, title: 'How to Get a Multi-Engine Rating: Step-by...', date: '05 Nov 2025', words: '10,000', readTime: '02' },
+								{ id: 3, title: 'Critical engine failure twin engine: What pilot two word...', date: '01 Apr 2025', words: '25,000', readTime: '34' },
+								{ id: 4, title: 'Why Airliners Usually Have More Than...', date: '07 Jan 2022', words: '35,000', readTime: '55' },
+								{ id: 5, title: "What happens if all the plane's engines fail in...", date: '30 Apr 2026', words: '45,000', readTime: '105' },
+								{ id: 6, title: 'SeaStar Twin Engine Hydraulic Steering...', date: '30 Mar 2025', words: '55,000', readTime: '02' },
+								{ id: 7, title: "What is the protocol for restarting an airplane's...", date: '28 Feb 2026', words: '65,000', readTime: '02' },
+								{ id: 8, title: 'What are the key factors airlines consider to...', date: '30 May 2026', words: '75,000', readTime: '02' },
+								{ id: 9, title: 'How much does a dual engine plane cost?', date: '07 Jun 2026', words: '85,000', readTime: '67' },
+								{ id: 10, title: 'Can Planes Fly With One Engine?', date: '02 Jul 2025', words: '95,000', readTime: '20' },
+								{ id: 11, title: 'A Guide to Multi Engine Rating Cost...', date: '08 Oct 2025', words: '1200', readTime: '30' },
+								{ id: 12, title: 'Vmc: The Speed That Separates "Co..."', date: '31 Jan 2026', words: '3400', readTime: '23' },
+								{ id: 13, title: 'Why Do Dual-Engine Jets Dominate The Private...', date: '26 Aug 2026', words: '5600', readTime: '35' },
+								{ id: 14, title: 'How Far Can A Modern Twin Jet Fly On One...', date: '31 Jan 2026', words: '25,957', readTime: '67' },
+								{ id: 15, title: 'Why Airliners Usually Have More Than One...', date: '31 Jan 2026', words: '6457', readTime: '34' },
+								{ id: 16, title: "What happens if all the plane's engines fail...", date: '31 Jan 2026', words: '4585', readTime: '12' },
+								{ id: 17, title: 'SeaStar Twin Engine Hydraulic Steering...', date: '31 Jan 2026', words: '6457', readTime: '02' },
+								{ id: 18, title: "What is the protocol for restarting an airplane's...", date: '31 Jan 2026', words: '6864', readTime: '05' },
+								{ id: 19, title: 'How much does a dual engine plane cost?', date: '31 Jan 2026', words: '3456', readTime: '03' },
+								{ id: 20, title: 'Can Planes Fly With One Engine?', date: '31 Jan 2026', words: '2000', readTime: '04' }
+							];
+							var totalArticles = 114;
+							var perPage = 20;
+							var totalPages = 7;
+							var currentPage = 1;
+
+						section.library(aria-label="Articles library")
+							h2.library__mobile-title Aviation history
+							.library__tables
+								.library-table-wrap
+									table.library-table
+										thead
+											tr
+												th.library-table__head.library-table__head--num #
+												th.library-table__head.library-table__head--title Article
+												th.library-table__head.library-table__head--date
+													img.library-table__icon(src="/img/date.png" width="16" height="16" alt="" aria-label="Publication date")
+												th.library-table__head.library-table__head--words
+													img.library-table__icon(src="/img/words.png" width="16" height="16" alt="" aria-label="Words count")
+												th.library-table__head.library-table__head--time
+													img.library-table__icon(src="/img/time.png" width="16" height="16" alt="" aria-label="Reading time")
+										tbody
+											+libraryRows(articles.slice(0, 10))
+								.library-table-wrap.library-table-wrap--second
+									table.library-table
+										thead
+											tr
+												th.library-table__head.library-table__head--num #
+												th.library-table__head.library-table__head--title Article
+												th.library-table__head.library-table__head--date
+													img.library-table__icon(src="/img/date.png" width="16" height="16" alt="" aria-label="Publication date")
+												th.library-table__head.library-table__head--words
+													img.library-table__icon(src="/img/words.png" width="16" height="16" alt="" aria-label="Words count")
+												th.library-table__head.library-table__head--time
+													img.library-table__icon(src="/img/time.png" width="16" height="16" alt="" aria-label="Reading time")
+										tbody
+											+libraryRows(articles.slice(10, 20))
+
+							.library__bottom
+								.library__total.library__total--desktop Showing 1–#{perPage} of #{totalArticles} publications
+								.library__total.library__total--mobile Total articles: #{totalArticles}
+								nav.pagination(aria-label="Pagination")
+									button.pagination__nav.pagination__nav--prev(type="button" aria-label="Previous page")
+										svg(width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true")
+											path(d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+									- for (var i = 1; i <= totalPages; i++)
+										button.pagination__page(type="button" class=(i === currentPage ? 'is-active' : ''))= i
+									button.pagination__nav.pagination__nav--next(type="button" aria-label="Next page")
+										svg(width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true")
+											path(d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+
+block variables
+	-var title = "Library";

@@ -1,5 +1,6 @@
 import '@/scss/main.scss'
 import './header.js'
+import './library.js'
 document.addEventListener('DOMContentLoaded', () => {
   const dynamicItems = document.querySelectorAll('[data-dynamic-move]');
 
