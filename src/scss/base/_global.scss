@@ -37,7 +37,7 @@ body {
 	max-width: 1920px;
 	padding-left: 40px;
 	padding-right: 40px;
-	@media (max-width: $bp-tablet) {
+	@media (max-width: 1199px) {
 	  padding-left: 16px;
 	  padding-right: 16px;
 	}
