@@ -5,7 +5,9 @@
 	z-index: 10;
 	padding-top: 16px;
 	padding-bottom: 16px;
-	// background-color: var(--color-white-warm);
+	.dropdown{
+		top: 50%;
+	}
 
 	&__inner {
 		display: flex;

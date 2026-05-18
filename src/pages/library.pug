@@ -13,6 +13,7 @@ mixin libraryRows(items)
 		tr.library-row__expand(aria-hidden="true")
 			td(colspan="5")
 				.library-card
+					.library-card__num= article.id
 					.library-card__title= article.title
 					.library-card__meta
 						span.library-card__label Date:
@@ -128,4 +129,5 @@ block content
 
 
 block variables
+	-var bodyCl ="library-body"
 	-var title = "Library";

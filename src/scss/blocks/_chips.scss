@@ -38,12 +38,12 @@
 	&.is-active {
 		background-color: var(--light-blue);
 		color: var(--color-white);
-		box-shadow:
-			-2px 4px 4.5px rgba(16, 39, 91, 0.1),
-			-6px 14px 8px rgba(16, 39, 91, 0.09),
-			-14px 32px 10.5px rgba(16, 39, 91, 0.05),
-			-26px 57px 12.5px rgba(16, 39, 91, 0.01),
-			-40px 89px 13.5px rgba(16, 39, 91, 0);
+		// box-shadow:
+		// 	-2px 4px 4.5px rgba(16, 39, 91, 0.1),
+		// 	-6px 14px 8px rgba(16, 39, 91, 0.09),
+		// 	-14px 32px 10.5px rgba(16, 39, 91, 0.05),
+		// 	-26px 57px 12.5px rgba(16, 39, 91, 0.01),
+		// 	-40px 89px 13.5px rgba(16, 39, 91, 0);
 		
 	}
 
