@@ -15,7 +15,7 @@ block content
 								img(src='./img/2.png', srcset='./img/2@2x.png 2x' width='275' height='243' loading='lazy' alt='img')
 							.image-right
 								img(src='./img/3.png', srcset='./img/3@2x.png 2x' width='310' height='243' loading='lazy' alt='img')
-
+						.partners-banner-wrapper
 							.partners-banner
 								.partners-banner__img
 									img(src='./img/Icon.png', srcset='./img/Icon@2x.png 2x' width='55' height='55' loading='lazy' alt='img')
@@ -24,8 +24,40 @@ block content
 									p.font-18 Space available —<br>promote your project now!
 
 					.main-right
-						
+						article.article
+							header.article__header
+								h1.article__title Critical Engine Failure Twin Engine: What Pilots Actually Do
+								.article__reading-time
+									svg.article__reading-time-icon(viewBox="0 0 24 24" fill="none" aria-hidden="true")
+										circle(cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5")
+										path(d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round")
+									span.article__reading-time-text 12 minutes
+								nav.article__breadcrumbs(aria-label="Breadcrumbs")
+									a.article__breadcrumb-link(href="/library.html") Aviation history
+									span.article__breadcrumb-separator /
+									span.article__breadcrumb-current Critical Engine Failure Twin Engine: What Pilots Actually Do
+
+							.article__body
+								p.article__subtitle Understanding the procedures, decisions, and split-second calls pilots make when one of two engines fails during flight.
+								p.article__paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+								h2.article__heading Stay calm during the aircraft VOC
+								p.article__paragraph Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+
+								h2.article__heading Identify and assess the failure
+								p.article__paragraph Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi.
+
+								h2.article__heading Communicate clearly and concisely
+								p.article__paragraph Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc.
+
+								h2.article__heading Prepare the aircraft and cabin
+								p.article__paragraph Nullam rhoncus aliquam metus. Etiam egestas wisi a erat. Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices.
+
+								h2.article__heading Conclusion
+								p.article__paragraph Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla.
+								a(href="https://Link.com").link 👉 https://Link.com
+								
 
 block variables
-	-var bodyCl ="library-body"
+	-var bodyCl ="article-body"
 	-var title = "Single article";
