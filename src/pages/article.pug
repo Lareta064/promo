@@ -1,5 +1,4 @@
 extends /pug/layouts/layout.pug
-
 block content
 	.page-content
 		include /pug/sections/_header.pug
@@ -16,8 +15,7 @@ block content
 								img(src='./img/2.png', srcset='./img/2@2x.png 2x' width='275' height='243' loading='lazy' alt='img')
 							.image-right
 								img(src='./img/3.png', srcset='./img/3@2x.png 2x' width='310' height='243' loading='lazy' alt='img')
-					
-						.partners-banner-wrapper
+
 							.partners-banner
 								.partners-banner__img
 									img(src='./img/Icon.png', srcset='./img/Icon@2x.png 2x' width='55' height='55' loading='lazy' alt='img')
@@ -26,37 +24,8 @@ block content
 									p.font-18 Space available —<br>promote your project now!
 
 					.main-right
-						.widgets-wrapper(style="background-image: url(./img/bg.png)")
-							.widgets-wrapper__title Look at the conditions your friends train in — impressive!
-							.widgets-list
-								//single
-								.widget-single
-									.widget-display
-										.widget-content
-									
-									.widgets-list-form
-										.widget-input
-											input(type="text" name="widget1")
-										.widget-name Define FAA location identifier: SFO, JFK, LAX
-		
-								//single
-								.widget-single
-									.widget-display
-										.widget-content
-									
-									.widgets-list-form
-										.widget-input
-											input(type="text" name="widget1")
-										.widget-name Define FAA location identifier: SFO, JFK, LAX
+						
 
-						//bottom
-						.widget-bottom
-							.desktop-line.news-ticker
-								.ticker-wrapper
-									ul
-										li Every owner gets direct attention, a management approach tailored to their situation.
-										li We don’t run a bureaucracy — we run a partnership.
-
-			
 block variables
-	-var title = "Project";
+	-var bodyCl ="library-body"
+	-var title = "Single article";

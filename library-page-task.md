@@ -40,3 +40,5 @@ mobile click single article: https://www.figma.com/design/tTOSB4SXaE78VP1Cs8r15t
 1 Сылка на всплывающее по клику в таблице на моб версии
 figma-reference\library-page\library-card.png
 2 Внести правки в library-card, согласно макета
+
+# Фаза 6

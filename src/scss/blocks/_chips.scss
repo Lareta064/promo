@@ -7,10 +7,10 @@
 	gap: 32px;
 	flex-wrap: wrap;
 	@media (max-width: 1599px) {
-	  gap: 16px;
+	  gap: 12px;
 	}
 	
-	@media (max-width: $bp-tablet) {
+	@media (max-width: 1199px) {
 	  gap: 8px;
 	}
 }

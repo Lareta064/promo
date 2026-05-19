@@ -1,0 +1,67 @@
+# Инструкция по верстке страницы одной статьи
+# Фаза 1
+В корне проекта в папке figma-reference, в папке article-page изучи изображения страницы одной статьи на десктоп версии и на мобильной версии.  Шапка уже сверстана. Левая часть с картинками тоже сверстана. Задача - сверстать правый контент, в котором отображается текст статьи
+
+Код правой части надо добавить в файл src - pages - article.pug  внутри дива .main-right
+Для данной задачи не надо создавать компоненты в папке ui
+
+# Стили
+# Заголовок статьи
+```
+font-family: var(--second-family);
+font-weight: 400;
+font-size: 35px;
+line-height: 129%;
+letter-spacing: 0.03em;
+color: var(--color-blue);
+
+```
+# Заголовок статьи на моб версии
+```
+font-weight: 400;
+font-size: 24px;
+line-height: 125%;
+
+```
+# Подзаголовок статьи
+```
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 178%;
+color: var(--color-grey-medium);
+
+```
+# Подзаголовок статьи на моб версии
+```
+
+font-size: 16px;
+line-height: 175%;
+
+
+```
+# Текст статьи
+```
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 169%;
+color: var(--color-crey);
+```
+
+
+
+# Заголовки внутри статьи
+```
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 25px;
+line-height: 160%;
+color: var(--color-blue);
+```
+# Заголовки внутри статьи на моб версии
+```
+font-size: 20px;
+
+```
+# Отступы внутри статьи по 40px
